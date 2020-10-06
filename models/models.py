@@ -1,18 +1,26 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import UserError
 
 
-# class sale_design(models.Model):
-#     _name = 'sale_design.sale_design'
-#     _description = 'sale_design.sale_design'
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    attachment = fields.Binary("Attachment")
+
+
+class Task(models.Model):
+    _inherit = 'project.task'
+
+    attachment = fields.Binary("Attachment")
+
+
+class ProjectCreateInvoice(models.TransientModel):
+    _inherit = 'project.create.invoice'
+
+    def action_create_invoice(self):
+        if not self.attachment:
+            raise UserError(_("The selected Sales Order should contain an attachment before it can be converted to an invoice."))
+
+        return super(ProjectCreateInvoice, self).action_create_invoice()

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--        Project-->
+        <record forcecreate="False" id="design_2d_project" model="project.project">
+            <field name="name">2D Design</field>
+            <field name="privacy_visibility">employees</field>
+        </record>
+
+        <record forcecreate="False" id="design_3d_project" model="project.project">
+            <field name="name">3D Design</field>
+            <field name="privacy_visibility">employees</field>
+        </record>
+
+        <!-- Stages -->
+        <record id="design_project_stage_0" model="project.task.type">
+            <field name="sequence">1</field>
+            <field name="name">New</field>
+            <field name="project_ids" eval="[(6, 0, [ref('design_2d_project'), ref('design_3d_project')])]"/>
+        </record>
+        <record id="design_project_stage_1" model="project.task.type">
+            <field name="sequence">10</field>
+            <field name="name">Doing</field>
+            <field name="project_ids" eval="[(6, 0, [ref('design_2d_project'), ref('design_3d_project')])]"/>
+        </record>
+        <record id="design_project_stage_2" model="project.task.type">
+            <field name="sequence">20</field>
+            <field name="name">Awaiting Approval</field>
+            <field name="project_ids" eval="[(6, 0, [ref('design_2d_project'), ref('design_3d_project')])]"/>
+        </record>
+        <record id="design_project_stage_3" model="project.task.type">
+            <field name="sequence">40</field>
+            <field name="name">Done</field>
+            <field name="project_ids" eval="[(6, 0, [ref('design_2d_project'), ref('design_3d_project')])]"/>
+        </record>
+
+    </data>
+</odoo>

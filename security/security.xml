@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="group_com_designer" model="res.groups">
+            <field name="name">DesignCom / Designer</field>
+        </record>
+
+        <record id="group_com_manager" model="res.groups">
+            <field name="name">DesignCom / Manager</field>
+        </record>
+
+
+    </data>
+</odoo>
