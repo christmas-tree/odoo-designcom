@@ -25,9 +25,7 @@
     # always loaded
     'data': [
         'security/security.xml',
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/create_task_view.xml',
         'data/project_data.xml',
     ],
     # only loaded in demonstration mode
