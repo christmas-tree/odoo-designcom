@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_design_task_form2_inherit" model="ir.ui.view">
+            <field name="name">sale_design_task_form2_inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_assign_to_me']" position="after">
+                    <button name="action_take_task" string="Take task and start" type="object" class="oe_highlight"
+                            attrs="{'invisible' : [('stage_id', '!=', %(design_project_stage_0)d)]}"/>
+                    <button name="action_submit_for_approval" string="Submit for approval" type="object" class="oe_highlight"
+                            attrs="{'invisible' : [('stage_id', '!=', %(design_project_stage_1)d)]}"/>
+                    <button name="action_approve" string="Approve" type="object" class="oe_highlight"
+                            attrs="{'invisible' : [('stage_id', '!=', %(design_project_stage_2)d)]}"
+                            groups="sale_design.group_com_manager"/>
+                    <button name="action_reject" string="Reject" type="object"
+                            attrs="{'invisible' : [('stage_id', '!=', %(design_project_stage_2)d)]}"
+                            groups="sale_design.group_com_manager"/>
+                </xpath>
+
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="attachment"/>
+                    <field name="design_sale_order_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -25,7 +25,9 @@
     # always loaded
     'data': [
         'security/security.xml',
-        'views/create_task_view.xml',
+        'views/project_task_view.xml',
+        'views/sale_order_view.xml',
+        'wizard/create_task_view.xml',
         'data/project_data.xml',
     ],
     # only loaded in demonstration mode

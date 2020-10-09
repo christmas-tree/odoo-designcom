@@ -3,14 +3,14 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
 
+
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    attachment = fields.Binary("Attachment")
+    attachment = fields.Binary("Attachment", readonly=True)
     design_task_ids = fields.One2many('project.task', 'design_sale_order_id', string='Associated Tasks')
     design_task_count = fields.Integer(string='Task Count', compute='_compute_task_count', store=False)
 
-    # @api.depends('task_ids')
     def _compute_task_count(self):
         for order in self:
             order.design_task_count = len(order.design_task_ids)
