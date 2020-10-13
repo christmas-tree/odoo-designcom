@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_sale_confirmation" model="mail.template">
+            <field name="name">Sale Order: Confirmation</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">${object.company_id.name} Order (Ref ${object.name or 'n/a' })</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="body_html" type="html">
+<div style="font-size: 16px;">
+    <div>
+        % set website_url = object.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        <h1 style="text-align: center; margin: 20px 0px;">It's Ordered</h1>
+        <p style="margin: 10px 10px 10px 25px;">Hi ${object.partner_id.name} - thank you for your order, we hope you enjoy shopping with us.</p>
+        <p style="margin: 10px 10px 30px 25px;">Click here to view your order details:
+            <a href="${website_url}${object.get_portal_url()}">${website_url}${object.get_portal_url()}</a>
+        </p>
+    </div>
+    <div style="margin: 1px; padding: 10px; border: 2px dashed #474747; color: #474747;">
+    <p style="margin: 5px; padding: 0px;">
+        Your Invoicing and Shipping Address:
+    </p>
+    <p style="margin: 5px; padding: 0px;">
+        ${object.partner_shipping_id.name}
+    </p>
+    <p style="margin: 5px; margin-bottom: 15px; padding: 0px;">
+        ${object.partner_shipping_id.phone}<br/>
+        % if object.partner_shipping_id.street:
+            ${object.partner_shipping_id.street}<br/>
+        % endif
+        % if object.partner_shipping_id.street2:
+            ${object.partner_shipping_id.street2}<br/>
+        % endif
+        % if object.partner_shipping_id.city == False:
+            ${object.partner_shipping_id.city}
+        % endif
+        % if object.partner_shipping_id.state_id:
+            ${object.partner_shipping_id.state_id.id}
+        % endif
+        % if object.partner_shipping_id.zip:
+            ${object.partner_shipping_id.zip}
+        % endif
+        % if object.partner_shipping_id.country_id != False:
+            <br/>${object.partner_shipping_id.country_id.name}
+        % endif
+    </p>
+
+    % if object.commitment_date:
+        <p style="margin: 5px; padding: 0px;">
+            Shipping Date: <em>Expected${object.commitment_date.strftime('%d/%m/%Y')}</em><br/>
+        </p>
+    % endif
+
+    % if object.payment_term_id:
+        <p style="margin: 5px; padding: 0px;">
+            Payment term: ${object.payment_term_id.name}
+        </p>
+    % endif
+
+</div>
+</div>
+            </field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="user_signature" eval="False"/>
+        </record>
+    </data>
+</odoo>

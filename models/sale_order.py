@@ -16,12 +16,17 @@ class SaleOrder(models.Model):
             order.design_task_count = len(order.design_task_ids)
 
     def action_confirm(self):
-        for order in self:
-            if not order.attachment:
-                raise UserError(_(
-                    "The selected Sales Order should contain an attachment before it can be converted to an invoice."))
+        res = super(SaleOrder, self).action_confirm()
+        if res:
+            template = self.env.ref('sale_design.email_template_sale_confirmation', raise_if_not_found=False)
 
-        return super(SaleOrder, self).action_confirm()
+            for order in self:
+                if not order.attachment:
+                    raise UserError(_(
+                        "The selected Sales Order should contain an attachment before it can be converted to an invoice."))
+                template.send_mail(order.id, force_send=True, raise_exception=True)
+
+        return res
 
     def action_view_tasks(self):
         action = self.env.ref('project.action_view_task').read()[0]
