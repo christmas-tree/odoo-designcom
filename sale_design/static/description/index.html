@@ -21,16 +21,16 @@
           <li class="nav-item mr-1 mb-3"
               style="font-size: 1.05rem;font-weight: 400;transition: all .15s ease;color: #875a7b;background-color:  #875a7b;box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);border: 2px solid #875a7b;font-family: 'Open Sans',sans-serif;width: 140px;border-radius: 0.30rem;">
             <a
-                    id="pills-home-tab" data-toggle="pill" href="#pills-home1" role="tab"
-                    aria-controls="pills-home" aria-selected="true" class="nav-link "
-                    style="color: #000000;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">Features</a>
+                    class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                    aria-controls="pills-home" aria-selected="true"
+                    style="color: #ffffff;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">Features</a>
           </li>
           <li class="nav-item mr-1 mb-3"
               style="font-size: 1.05rem;font-weight: 400;transition: all .15s ease;color: #ffffff;background-color:  #875a7b;box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);border: 2px solid #875a7b;font-family: 'Open Sans',sans-serif;width: 140px;border-radius: 0.30rem;">
             <a
-                    class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-video"
-                    role="tab" aria-controls="pills-profile" aria-selected="false"
-                    style="color: #000000;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">User
+                    class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-video" role="tab"
+                    aria-controls="pills-profile" aria-selected="false"
+                    style="color: #ffffff;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">User
               Guide</a>
           </li>
         </ul>
@@ -82,11 +82,13 @@
                 </p>
                 <ol>
                   <li style="margin-top: 5px">Enable "Backup to local machine"</li>
-                  <img style="width: 100%;" src="image/guide/local_backup_setting.png">
+                  <img style="max-width: 100%;max-height: 500px;display: block;"
+                       src="image/guide/local_backup_setting.png">
                   <li style="margin-top: 5px">Enter the path to the directory in which you want the files saved.
                     <br/><strong><em>Please note:</em></strong> This must be an absolute path.
                   </li>
-                  <li style="margin-top: 5px">Choose the backup interval. This setting is shared between local backup and Google Drive backup,
+                  <li style="margin-top: 5px">Choose the backup interval. This setting is shared between local backup
+                    and Google Drive backup,
                     which we will mention later.
                   </li>
                   <li style="margin-top: 5px">Save the settings. You are good to go.
@@ -102,42 +104,49 @@
                     Google account.
                   </li>
                   <li style="margin-top: 5px">Search for "Google Drive" and select "Google Drive API".
-                    <img style="width: 100%;" src="image/guide/1_console_search.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;"
+                         src="image/guide/1_console_search.png"/>
                   </li>
                   <li style="margin-top: 5px">Click Enable to enable the API.
-                    <img style="width: 100%;" src="image/guide/2_enable.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/2_enable.png"/>
                   </li>
-                  <li style="margin-top: 5px">From your API Console, go to OAuth Consent Screen on the left menu. Then, in User Type, choose
+                  <li style="margin-top: 5px">From your API Console, go to OAuth Consent Screen on the left menu. Then,
+                    in User Type, choose
                     External.
-                    <img style="width: 100%;" src="image/guide/3_oauth_consent.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;"
+                         src="image/guide/3_oauth_consent.png"/>
                   </li>
-                  <li style="margin-top: 5px">Fill in some basic app information. On the second page, choose the following scopes:
-                    <img style="width: 100%;" src="image/guide/4_scopes.png"/>
+                  <li style="margin-top: 5px">Fill in some basic app information. On the second page, choose the
+                    following scopes:
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/4_scopes.png"/>
                     You may see a "Verification required" warning, as one of the scopes we have chosen is sensitive.
                     Don't
                     worry, we can still use Google without having to wait for Google's verification.
                   </li>
-                  <li style="margin-top: 5px">Once you have compld setting up the OAuth Consent Screen, go to Credentials and Create
+                  <li style="margin-top: 5px">Once you have compld setting up the OAuth Consent Screen, go to
+                    Credentials and Create
                     Credentials. Select OAuth Client ID.
-                    <img style="width: 100%;" src="image/guide/3_create_cre.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/3_create_cre.png"/>
                   </li>
-                  <li style="margin-top: 5px">Choose "Web application" as the application type. In Authorized JavaScript origins, fill in your
+                  <li style="margin-top: 5px">Choose "Web application" as the application type. In Authorized JavaScript
+                    origins, fill in your
                     Odoo's domain. In Authorized redirect URIs, fill in an URL with the following format:<br/>
                     <strong><em>[Odoo Domain]</em>/autobackup/authentication</strong><br/>
                     For example, if your Odoo site is located at <em>https://magenest.com</em>, then the URL that you
                     need to use is
                     <em>https://magenest.com/autobackup/authentication</em>.<br/>
                     Then, click Create.
-                    <img style="width: 100%;" src="image/guide/5_credentials.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/5_credentials.png"/>
                   </li>
-                  <li style="margin-top: 5px">You should see a pop-up with your Client ID and Client Secret. Please save this information, we
+                  <li style="margin-top: 5px">You should see a pop-up with your Client ID and Client Secret. Please save
+                    this information, we
                     will need it later.
-                    <img style="width: 100%;" src="image/guide/6_clientid.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/6_clientid.png"/>
                   </li>
                   <li style="margin-top: 5px">
                     Go to your Google Drive and create a new folder to store backup files, then save the folder ID.
                     You can open the folder and extract the folder ID from the URL.
-                    <img style="width: 100%;" src="image/guide/7_folderid.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/7_folderid.png"/>
                   </li>
                 </ol>
                 <h5>Set up in Odoo</h5>
@@ -145,7 +154,7 @@
                   <li style="margin-top: 5px">
                     In Odoo, go to Backup Settings and enable "Back up to Google Drive". Set the backup interval if
                     you haven't done so already.
-                    <img style="width: 100%;" src="image/guide/8_gdrive.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/8_gdrive.png"/>
                   </li>
                   <li style="margin-top: 5px">
                     Enter the Client ID, the Client Secret and the folder ID that we obtained earlier.
@@ -153,17 +162,21 @@
                   <li style="margin-top: 5px">
                     Save the settings.
                   </li>
-                  <li style="margin-top: 5px">Click "Set up authorization code". In the newly opened window, click "Get Authorization code".
-                    <img style="width: 100%;" src="image/guide/9_authorizationcode.png"/>
+                  <li style="margin-top: 5px">Click "Set up authorization code". In the newly opened window, click "Get
+                    Authorization code".
+                    <img style="max-width: 100%;max-height: 500px;display: block;"
+                         src="image/guide/9_authorizationcode.png"/>
                   </li>
                   <li style="margin-top: 5px">
                     Choose, or log in to your Google account. You may then see a warning like this:
-                    <img style="width: 100%;" src="image/guide/10_warning.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/10_warning.png"/>
                     Google shows you this warning, because the app you created earlier was not verified. You can just
                     click
                     "Advanced", then "Go to [Your app name] (unsafe)".
                   </li>
-                  <li style="margin-top: 5px">Accept the permissions. You will then be redirected to your Odoo homepage.</li>
+                  <li style="margin-top: 5px">Accept the permissions. You will then be redirected to your Odoo
+                    homepage.
+                  </li>
                   <li style="margin-top: 5px">Close the Odoo settings page that you opened earlier, <em>without</em>
                     saving the form. You are now good to go.
                   </li>
@@ -181,13 +194,17 @@
                 </ol>
                 <p><strong>Please note:</strong></p>
                 <ul>
-                  <li style="margin-top: 5px">1 week is counted as 7 days, and 1 month is counted as 30 days, even if the actual month is a
+                  <li style="margin-top: 5px">1 week is counted as 7 days, and 1 month is counted as 30 days, even if
+                    the actual month is a
                     31-day month.
                   </li>
-                  <li style="margin-top: 5px">If you change the Client ID or Client Secret, the module won't be able to remove the backups
+                  <li style="margin-top: 5px">If you change the Client ID or Client Secret, the module won't be able to
+                    remove the backups
                     created using the previous credentials.
                   </li>
-                  <li style="margin-top: 5px">If you move a local backup file or rename it, the module won't be able to find and remove it.</li>
+                  <li style="margin-top: 5px">If you move a local backup file or rename it, the module won't be able to
+                    find and remove it.
+                  </li>
                 </ul>
               </div>
               <div>
@@ -195,9 +212,11 @@
                 <ol>
                   <li style="margin-top: 5px">Navigate to your Odoo's Users settings.</li>
                   <li style="margin-top: 5px">Open the user to to whom you want the emails to be sent.</li>
-                  <li style="margin-top: 5px">Switch to the "Auto Backup" tab, then check the "Send backup information email to this user"
+                  <li style="margin-top: 5px">Switch to the "Auto Backup" tab, then check the "Send backup information
+                    email to this user"
                     option.
-                    <img style="width: 100%;" src="image/guide/12_email_setting.png"/>
+                    <img style="max-width: 100%;max-height: 500px;display: block;"
+                         src="image/guide/12_email_setting.png"/>
                   </li>
                 </ol>
               </div>
@@ -209,19 +228,18 @@
 
         <div class="px-3 pt-1 tab-pane fade " id="pills-home1" role="tabpanel"
              aria-labelledby="pills-home-tab">
-          <!-- features tab-->
           <h2 style="font-weight: 600;text-align: center;width: 100%;">Features</h2>
           <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
           <ul>
-            <img style="width: 100%;" src="image/guide/UI.png"/>
+            <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/UI.png"/>
             <p class="mb8"
-               style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
+               style="font-family: Roboto,serif;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Automatically generate database
               backups
             </p>
 
             <p class="mb8"
-               style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
+               style="font-family: Roboto,serif;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Save backup file to local machine or
               Google Drive
             </p>
@@ -234,12 +252,12 @@
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Track your backups from Backup
               History panel.
             </p>
-            <img style="width: 100%;" src="image/guide/email.png"/>
             <p class="mb8"
                style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Send emails to selected users when a
               new backup is created.
             </p>
+            <img style="max-width: 100%;max-height: 500px;display: block;" src="image/guide/email.png"/>
           </ul>
         </div>
 
