@@ -45,159 +45,159 @@
             <hr style="margin-top: 0;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
             <div>
 
-              <h3>Basic installation</h3>
+              <h3 style="margin-top: 30px; margin-bottom: 20px;">Basic installation</h3>
               <p>
                 The installation process is quite straightforward, though it may requires further steps to use advanced
                 features.
               </p>
               <ol>
-                <li>
+                <li style="margin-top: 5px">
                   Download the app from the Odoo app store and extract the compressed file. You should get a folder
                   named
                   "odoo_addon_auto_backup".
                 </li>
-                <li>
+                <li style="margin-top: 5px">
                   Copy and paste it to your addons folder.
                 </li>
-                <li>
+                <li style="margin-top: 5px">
                   Go to Apps on your Odoo menu and click "Update Apps List".
                 </li>
-                <li>
+                <li style="margin-top: 5px">
                   Search for a module named "Odoo Addon Auto Backup", then click "Install".
                 </li>
               </ol>
             </div>
             <div>
-              <h3>Get the app up and running</h3>
+              <h3 style="margin-top: 30px; margin-bottom: 20px;">Get the app up and running</h3>
               <p>
                 Now that the module is installed, you should see a new "Back up" item on your Odoo main menu. Click on
                 "Back up" and you will be redirected to the Backup History page.
               </p>
 
               <div>
-                <h4>Backup to local machine</h4>
+                <h4 style="margin-top: 20px; margin-bottom: 20px;">Backup to local machine</h4>
                 <p>
                   The most basic and easy-to-set-up feature of the app is dumping your database to a file and save it on
                   your server machine. To enable this feature, simply:
                 </p>
                 <ol>
-                  <li>Enable "Backup to local machine"</li>
-                  <img src="image/guide/local_backup_setting.png">
-                  <li>Enter the path to the directory in which you want the files saved.
+                  <li style="margin-top: 5px">Enable "Backup to local machine"</li>
+                  <img style="width: 100%;" src="image/guide/local_backup_setting.png">
+                  <li style="margin-top: 5px">Enter the path to the directory in which you want the files saved.
                     <br/><strong><em>Please note:</em></strong> This must be an absolute path.
                   </li>
-                  <li>Choose the backup interval. This setting is shared between local backup and Google Drive backup,
+                  <li style="margin-top: 5px">Choose the backup interval. This setting is shared between local backup and Google Drive backup,
                     which we will mention later.
                   </li>
-                  <li>Save the settings. You are good to go.
+                  <li style="margin-top: 5px">Save the settings. You are good to go.
                   </li>
                 </ol>
               </div>
               <div>
-                <h4>Backup to Google Drive</h4>
+                <h4 style="margin-top: 20px; margin-bottom: 20px;">Backup to Google Drive</h4>
                 <h5>Set up in Google</h5>
                 <ol>
-                  <li>First, we need to enable your Google Drive API. Go to <a
+                  <li style="margin-top: 5px">First, we need to enable your Google Drive API. Go to <a
                           href="https://console.developers.google.com/">Google APIs platform</a> and log into your
                     Google account.
                   </li>
-                  <li>Search for "Google Drive" and select "Google Drive API".
-                    <img src="image/guide/1_console_search.png"/>
+                  <li style="margin-top: 5px">Search for "Google Drive" and select "Google Drive API".
+                    <img style="width: 100%;" src="image/guide/1_console_search.png"/>
                   </li>
-                  <li>Click Enable to enable the API.
-                    <img src="image/guide/2_enable.png"/>
+                  <li style="margin-top: 5px">Click Enable to enable the API.
+                    <img style="width: 100%;" src="image/guide/2_enable.png"/>
                   </li>
-                  <li>From your API Console, go to OAuth Consent Screen on the left menu. Then, in User Type, choose
+                  <li style="margin-top: 5px">From your API Console, go to OAuth Consent Screen on the left menu. Then, in User Type, choose
                     External.
-                    <img src="image/guide/3_oauth_consent.png"/>
+                    <img style="width: 100%;" src="image/guide/3_oauth_consent.png"/>
                   </li>
-                  <li>Fill in some basic app information. On the second page, choose the following scopes:
-                    <img src="image/guide/4_scopes.png"/>
+                  <li style="margin-top: 5px">Fill in some basic app information. On the second page, choose the following scopes:
+                    <img style="width: 100%;" src="image/guide/4_scopes.png"/>
                     You may see a "Verification required" warning, as one of the scopes we have chosen is sensitive.
                     Don't
                     worry, we can still use Google without having to wait for Google's verification.
                   </li>
-                  <li>Once you have compld setting up the OAuth Consent Screen, go to Credentials and Create
+                  <li style="margin-top: 5px">Once you have compld setting up the OAuth Consent Screen, go to Credentials and Create
                     Credentials. Select OAuth Client ID.
-                    <img src="image/guide/3_create_cre.png"/>
+                    <img style="width: 100%;" src="image/guide/3_create_cre.png"/>
                   </li>
-                  <li>Choose "Web application" as the application type. In Authorized JavaScript origins, fill in your
-                    Odoo's domain. In Authorized redirect URIs, fill in an URL with the following format: [Odoo
-                    Domain]/autobackup/authentication<br/>
-                    For example, if your doo site is located at <em>https://magenest.com</em>, then the URL that you
+                  <li style="margin-top: 5px">Choose "Web application" as the application type. In Authorized JavaScript origins, fill in your
+                    Odoo's domain. In Authorized redirect URIs, fill in an URL with the following format:<br/>
+                    <strong><em>[Odoo Domain]</em>/autobackup/authentication</strong><br/>
+                    For example, if your Odoo site is located at <em>https://magenest.com</em>, then the URL that you
                     need to use is
                     <em>https://magenest.com/autobackup/authentication</em>.<br/>
                     Then, click Create.
-                    <img src="image/guide/5_credentials.png"/>
+                    <img style="width: 100%;" src="image/guide/5_credentials.png"/>
                   </li>
-                  <li>You should see a pop-up with your Client ID and Client Secret. Please save this information, we
+                  <li style="margin-top: 5px">You should see a pop-up with your Client ID and Client Secret. Please save this information, we
                     will need it later.
-                    <img src="image/guide/6_clientid.png"/>
+                    <img style="width: 100%;" src="image/guide/6_clientid.png"/>
                   </li>
-                  <li>
+                  <li style="margin-top: 5px">
                     Go to your Google Drive and create a new folder to store backup files, then save the folder ID.
                     You can open the folder and extract the folder ID from the URL.
-                    <img src="image/guide/7_folderid.png"/>
+                    <img style="width: 100%;" src="image/guide/7_folderid.png"/>
                   </li>
                 </ol>
                 <h5>Set up in Odoo</h5>
                 <ol>
-                  <li>
+                  <li style="margin-top: 5px">
                     In Odoo, go to Backup Settings and enable "Back up to Google Drive". Set the backup interval if
                     you haven't done so already.
-                    <img src="image/guide/8_gdrive.png"/>
+                    <img style="width: 100%;" src="image/guide/8_gdrive.png"/>
                   </li>
-                  <li>
+                  <li style="margin-top: 5px">
                     Enter the Client ID, the Client Secret and the folder ID that we obtained earlier.
                   </li>
-                  <li>
+                  <li style="margin-top: 5px">
                     Save the settings.
                   </li>
-                  <li>Click "Set up authorization code". In the newly opened window, click "Get Authorization code".
-                    <img src="image/guide/9_authorizationcode.png"/>
+                  <li style="margin-top: 5px">Click "Set up authorization code". In the newly opened window, click "Get Authorization code".
+                    <img style="width: 100%;" src="image/guide/9_authorizationcode.png"/>
                   </li>
-                  <li>
+                  <li style="margin-top: 5px">
                     Choose, or log in to your Google account. You may then see a warning like this:
-                    <img src="image/guide/10_warning.png"/>
+                    <img style="width: 100%;" src="image/guide/10_warning.png"/>
                     Google shows you this warning, because the app you created earlier was not verified. You can just
                     click
                     "Advanced", then "Go to [Your app name] (unsafe)".
                   </li>
-                  <li>Accept the permissions. You will then be redirected to your Odoo homepage.</li>
-                  <li>Close the Odoo settings page that you opened earlier, <em>without</em>
+                  <li style="margin-top: 5px">Accept the permissions. You will then be redirected to your Odoo homepage.</li>
+                  <li style="margin-top: 5px">Close the Odoo settings page that you opened earlier, <em>without</em>
                     saving the form. You are now good to go.
                   </li>
                 </ol>
               </div>
               <div>
-                <h4>Auto Clean Up</h4>
+                <h4 style="margin-top: 20px; margin-bottom: 20px;">Auto Clean Up</h4>
                 Setting up this feature is extremely easy. Just:
                 <ol>
-                  <li>
+                  <li style="margin-top: 5px">
                     Navigate to your Backup settings. Enable the feature by clicking on the box.
                   </li>
-                  <li>Set the backup limit.
+                  <li style="margin-top: 5px">Set the backup limit.
                   </li>
                 </ol>
                 <p><strong>Please note:</strong></p>
                 <ul>
-                  <li>1 week is counted as 7 days, and 1 month is counted as 30 days, even if the actual month is a
+                  <li style="margin-top: 5px">1 week is counted as 7 days, and 1 month is counted as 30 days, even if the actual month is a
                     31-day month.
                   </li>
-                  <li>If you change the Client ID or Client Secret, the module won't be able to remove the backups
+                  <li style="margin-top: 5px">If you change the Client ID or Client Secret, the module won't be able to remove the backups
                     created using the previous credentials.
                   </li>
-                  <li>If you move a local backup file or rename it, the module won't be able to find and remove it.</li>
+                  <li style="margin-top: 5px">If you move a local backup file or rename it, the module won't be able to find and remove it.</li>
                 </ul>
               </div>
               <div>
-                <h4>Send email upon new backup</h4>
+                <h4 style="margin-top: 20px; margin-bottom: 20px;">Send email upon new backup</h4>
                 <ol>
-                  <li>Navigate to your Odoo's Users settings.</li>
-                  <li>Open the user to to whom you want the emails to be sent.</li>
-                  <li>Switch to the "Auto Backup" tab, then check the "Send backup information email to this user"
+                  <li style="margin-top: 5px">Navigate to your Odoo's Users settings.</li>
+                  <li style="margin-top: 5px">Open the user to to whom you want the emails to be sent.</li>
+                  <li style="margin-top: 5px">Switch to the "Auto Backup" tab, then check the "Send backup information email to this user"
                     option.
-                    <img src="image/guide/12_email_setting.png"/>
+                    <img style="width: 100%;" src="image/guide/12_email_setting.png"/>
                   </li>
                 </ol>
               </div>
@@ -213,7 +213,7 @@
           <h2 style="font-weight: 600;text-align: center;width: 100%;">Features</h2>
           <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
           <ul>
-            <img src="image/guide/UI.png"/>
+            <img style="width: 100%;" src="image/guide/UI.png"/>
             <p class="mb8"
                style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Automatically generate database
@@ -234,7 +234,7 @@
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Track your backups from Backup
               History panel.
             </p>
-            <img src="image/guide/email.png"/>
+            <img style="width: 100%;" src="image/guide/email.png"/>
             <p class="mb8"
                style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
               <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Send emails to selected users when a
@@ -513,11 +513,11 @@
       <h4 style="font-size:16px;"> If you have anything to share with us based on your use of this module, please
         let us know. We are ready to offer our support. </h4>
       <div class="col-md-6" style="float:left; padding:20px;">
-        <h4><i class="fa fa-envelope"></i>Email us </h4>
+        <h4 style="margin-top: 20px; margin-bottom: 20px;"><i class="fa fa-envelope"></i>Email us </h4>
         <p>sales@magenest.com</p>
       </div>
       <div class="col-md-6" style="float:left; padding:20px;">
-        <h4><i class="fa fa-phone"></i> Contact Us </h4>
+        <h4 style="margin-top: 20px; margin-bottom: 20px;"><i class="fa fa-phone"></i> Contact Us </h4>
         <a href="https://magenest.com/en/contact-us/" target="_blank"> https://magenest.com/en/contact-us/</a>
       </div>
     </div>
